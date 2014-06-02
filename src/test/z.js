@@ -1,12 +1,12 @@
 var z = require('../z');
 
-var should = require('should');
+var assert = require('assert');
 
 describe('z', function () {
 	it('r < k subcase, along with other stuff', function (done) {
 		var s = 'aaacaba';
 
-		z(s).should.eql([void 0, 2, 1, 0, 1, 0, 1]);
+		assert.deepEqual(z(s), [void 0, 2, 1, 0, 1, 0, 1]);
 
 		done();
 	});
@@ -14,7 +14,7 @@ describe('z', function () {
 	it('2a case', function (done) {
 		var s = 'abadabade';
 		//       |--||-^|
-		z(s).should.eql([void 0, 0, 1, 0, 4, 0, 1, 0, 0]);
+		assert.deepEqual(z(s), [void 0, 0, 1, 0, 4, 0, 1, 0, 0]);
 
 		done();
 	});
@@ -22,7 +22,7 @@ describe('z', function () {
 	it('2b case', function (done) {
 		var s = 'ababaababe';
 		//       |--| |-^|
-		z(s).should.eql([void 0, 0, 3, 0, 1, 4, 0, 2, 0, 0]);
+		assert.deepEqual(z(s), [void 0, 0, 3, 0, 1, 4, 0, 2, 0, 0]);
 
 		done();
 	});
